@@ -12,7 +12,12 @@ def show
 end
 
 def create
-  @photo = Photo.create(params)
+  @photo = Photo.new(photo_params)
+  if @photo.save
+    redirect_to photo_path(@photo)
+  else
+    render 'new'
+  end
 end
 
 def edit
