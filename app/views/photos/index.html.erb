@@ -23,7 +23,8 @@
       <a href="http://localhost:3000/photos/<%= photo.id %>/edit">Edit</a>
     </td>
     <td>
-      <a href="http://localhost:3000/delete_photo/<%= photo.id %>">Delete</a>
+    <%= link_to "Delete", photo_path(photo), method: :delete %>
+
     </td>
   </tr>
   <% end %>
